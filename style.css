@@ -1,0 +1,477 @@
+/* =========================
+   IMPORTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+/* =========================
+   GLOBAL / RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: #bd4e00;
+    font-family: "Orbitron", sans-serif;
+}
+
+body.dragging{
+    user-select: none;
+    overflow: hidden;
+    cursor: grabbing;
+}
+
+.ciber-shape{
+    corner-shape: bevel;
+    border-radius: 10px;
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+
+#app{
+    border: 1px solid #bd4e00;
+    margin: 5px;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+#topbar{
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border: 1px solid #bd4e00;
+}
+
+
+/* =========================
+   LOGO AREA
+========================= */
+
+#logo-area{
+    display: flex;
+    align-items: baseline;
+}
+
+#logo{
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#logo-desc{
+    padding: 5px;
+    font-size: 1rem;
+}
+
+
+/* =========================
+   SYSTEM INFO
+========================= */
+
+#system-info{
+    display: flex;
+    align-items: baseline;
+}
+
+
+/* =========================
+   WINDOW CONTROLS
+========================= */
+
+#window-controls{
+    margin: 10px;
+    display: flex;
+}
+
+#window-controls button{
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+}
+
+.minimize{
+    border: 1px #bd4e00 solid;
+    font-weight: bold;
+}
+
+.maximize{
+    border: 1px #bd4e00 solid;
+    font-weight: bold;
+}
+
+.close{
+    border: 1px #bd4e00 solid;
+    font-weight: bold;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+#main-layout{
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/* =========================
+   PLAYER PANEL
+========================= */
+
+/* =========================
+   NOW PLAYING
+========================= */
+
+#now-playing{
+    padding-top: 20px;
+    position: relative;
+    margin: 15px;
+    display: flex;
+}
+
+#now-playing-title{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-weight: bolder;
+}
+
+.music-details{
+    display: flex;
+    flex-direction: column;
+}
+
+.track-title{
+    font-size: 1.5rem;
+}
+
+.artist-name{
+    font-size: .9rem;
+}
+
+.music-metadata{
+    list-style: none;
+}
+
+.album-display{
+    margin-right: 30px;
+}
+
+/* =========================
+   PLAYER PANEL
+========================= */
+
+
+
+/* =========================
+   PROGRESS SECTION
+========================= */
+
+#progress-section{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.progress-bar-container{
+    border: 2px solid #bd4e00;
+    width: 350px;
+    height: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill{
+    height: 100%;
+    background-color: #bd4e00;
+    width: 0%;
+    transition: width 0.3 ease;
+}
+
+.progress-percent{
+    font-weight: bold;
+    min-width: 40px;
+}
+
+.mini-play{
+    font-weight: bold;
+    margin: 5px;
+    width: 45px;
+    height: 45px;
+    align-items: baseline;
+    transition: background-color .3s;
+    border-radius: 40px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    color: #bd4e00;
+    background-color: black;
+    border-style: none;
+}
+
+button:hover{
+    background-color: #2c1200;
+}
+
+button:active{
+    color: #ca7030;
+    border-color: #ca7030;
+}
+
+/* =========================
+   VISUALIZER
+========================= */
+
+#visualizer{
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    border: 1px solid #bd4e00;
+    height: 64px;
+    align-items:end;
+    justify-content: center;
+}
+
+.bar{
+    width: 3px;
+    background-color: #bd4e00;
+    margin: 2px;
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+#controls{
+    border: 1px solid #bd4e00;
+    display: flex;
+    justify-content:space-around;
+    margin: 5px;
+
+}
+
+#controls button{
+    min-height: 40px;
+    min-width: 64px;
+    margin: 5px;
+    border: 1px solid #bd4e00;
+}
+
+.controls-left{
+    margin: 10px;
+
+}
+
+.controls-right{
+    margin: 10px;
+
+}
+
+/* =========================
+   AUDIO CONTROLS
+========================= */
+
+#audio-controls{
+    margin: 5px;
+    display: flex;
+    justify-content:space-between;
+    gap: 5px;
+}
+
+/* =========================
+   EQUALIZER
+========================= */
+
+#equalizer-title{
+    position: absolute;
+    font-weight: bolder;
+    margin: 5px;
+    top: 0px;
+    left: 10px;
+}
+
+#equalizer{
+    border: 1px solid #bd4e00;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eq-band{
+    position: relative;
+    display: flex;
+    gap: 50px;
+    height: 130px;
+    padding: 20px 20px 20px 50px;
+    background-image: 
+    linear-gradient(to bottom, #1a1a1a 1px, transparent 1px),
+    linear-gradient(to bottom, transparent 49%, #1a1a1a 49%, #1a1a1a 51%, transparent 51%),
+    linear-gradient(to top, #1a1a1a 1px, transparent 1px);
+
+    background-position: left 50px top 20px, left 50px top 0px, left 50px bottom 20px;
+    background-size: calc(100% - 70px) 100%;
+    background-repeat: no-repeat;
+}
+
+.side-ruler{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    border: 1px solid #bd4e00;
+    border-radius: 10px;
+    border-left: 1px dashed #bd4e00;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.side-ruler span{
+    line-height: 1px;
+    margin: 5px;
+    font-size: small;
+}
+
+.eq-band input[type="range"]{
+    writing-mode: vertical-rl;
+    direction: rtl;
+    height: 100%;
+    gap: 20px;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track{
+    width: 3px;
+    border:1px solid #bd4e00;
+    border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 13px;
+    width: 14px;
+    background: #bd4e00;
+    border-radius: 2px;
+    margin-right: -7px;
+}
+
+/* =========================
+   VOLUME PANEL
+========================= */
+
+#volume-panel{
+    border: 1px solid #bd4e00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 180px;
+}
+
+.volume-knob{
+    display: flex;
+    background: black;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: grab;
+}
+
+.knob-border{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), #090909);
+    box-shadow:
+    inset 2px 2px 4px rgba(189, 78, 0, 0.6),
+    inset -4px -4px 8px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(255, 140, 0, 0.2);
+    border-radius: 50%;
+}
+
+.volume-knob::after{
+    content: "";
+    width: 2px;
+    height: 20px;
+    background: #bd4e00;
+
+    position: absolute;
+    top: 5px;
+}
+
+.volume-knob:active{
+    cursor: grabbing;
+}
+
+/* =========================
+   PLAYLIST PANEL
+========================= */
+.playlist-header{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    font-weight: bolder;
+    border: 1px solid #bd4e00;
+}
+
+.playlist-header span{
+    font-weight: normal;
+}
+
+.playlist-container{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    width: 600px;
+    height: 60%;
+    border: 1px solid #bd4e00;
+}
+
+.track-item{
+    list-style: none;
+}
+
+.import-btn{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid #bd4e00;
+    border-radius: 4px;
+}

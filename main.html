@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Zero</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="app" class="ciber-shape">
+
+        <header id="topbar" class="ciber-shape">
+
+            <div id="logo-area">
+                <p id="logo">UNIT ZERO</p>
+                <p id="logo-desc">AUDIO PLAYER V0.0.1</p>
+            </div>
+            <div id="system-info">
+                <p>SYS: ONLINE | VOL: <span id="volume-info"></span> | MEM: 128MB</p>
+            </div>
+            <div id="window-controls">
+                <button class="minimize">🗕</button>
+                <button class="maximize">🗖</button>
+                <button class="close">🗙</button>
+            </div>
+
+        </header>
+        
+        <main id="main-layout">
+
+            <section id="player-panel">
+
+                <section id="now-playing">
+                    <p id="now-playing-title">NOW PLAYING</p>
+                    <div class="album-display">
+                        <img id="display" src="assets/unitzero_capa.png" alt="">
+                    </div>
+
+                    <div class="track-info">
+                        <div class="music-details">
+                            <p class="track-title">KAMAITACHI - VINHO TINTO</p>
+                            <p class="artist-name">[ VIOLETEIRO ]</p>
+                        </div>
+                        <br>
+                        <ul class="music-metadata">
+                            <li>TIME: </li>
+                            <li>BITRATE: </li>
+                            <li>FORMAT: </li>
+                            <li>MODE: </li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section id="progress-section">
+
+                    <button class="mini-play">▶</button>
+                    <div class="progress-bar-container">
+                        <div class="progress-fill" style="width: 74%;"></div>
+                    </div>
+                    <span class="progress-percent">74%</span>
+
+                </section>
+
+                <section id="visualizer" class="ciber-shape">
+
+                </section>
+
+                <section id="controls" class="ciber-shape">
+
+                    <div class="controls-left ciber-shape">
+                        <button id="prev-btn" class="ciber-shape">⏮</button>
+                        <button id="play-btn" class="ciber-shape">▶</button>
+                        <button id="next-btn" class="ciber-shape">⏭</button>
+                    </div>
+
+                    <div class="controls-right ciber-shape">
+                        <button id="shuffle-btn" class="ciber-shape">⤭</button>
+                        <button id="repeat-btn" class="ciber-shape">↱↲</button>
+                        <button id="stop-btn" class="ciber-shape">◼</button>
+                    </div>
+
+                </section>
+
+                <section id="audio-controls">
+
+                    <div id="equalizer" class="ciber-shape">
+                        <p id="equalizer-title">EQUALIZER</p>
+                        <div class="eq-band">
+                            <div class="side-ruler">
+                                <span>+12</span>
+                                <span>0</span>
+                                <span>-12</span>
+                            </div>
+
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                            <div class="slider"><input type="range"></div>
+                        </div>
+                    </div>
+                    <div id="volume-panel" class="ciber-shape">
+                        <div class="knob-border">
+                            <div class="volume-knob"></div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+
+            <aside id="playlist-panel">
+
+                <header class="playlist-header ciber-shape">
+                    <p>PLAYLIST ( <span>0</span> <span>TRACKS</span> )</p>
+                    <button class="import-btn ciber-shape">+</button>
+                </header>
+                <ul class="playlist-container ciber-shape">
+                    <li class="track-item"></li>
+                </ul>
+
+            </aside>
+
+        </main>
+
+        <section id="system-log">
+            <p class="log-line"></p>
+        </section>
+
+    </div>
+</body>
+</html>
